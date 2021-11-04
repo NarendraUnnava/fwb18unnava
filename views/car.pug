@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}.Barcelona will champions League
+
+  div(class="container-fluid")
+    h1= title
+  - let results=[{manufacturer:"benz",model:"Gle-320-d",price:129000},{manufacturer:"audi",model:"A4",price:58999},{manufacturer:"toyota",model:"corala",price:50000}] 
+    div(class="row")
+      each form,index in results
+        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.manufacturer}
+        br
+        br
+        br
+        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.model}
+        br
+        br
+        br
+        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.price}
+    script.
+     
+      function buy(itemNo)
+      {
+        alert(`You purchased Item ${itemNo+1}`)
+      }
+
+
+
+
+  
