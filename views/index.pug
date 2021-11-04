@@ -3,4 +3,19 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}.Barcelona will champions League
-  button(type="button", class="btn btn-secondary") Press Me for the contents
+
+
+  button(type="button", class="btn btn-success" onclick="update()") Press Me
+  br    
+  
+  br
+  div(id="target") Display 
+   script.
+    var client_count=0
+    function update(){
+     client_count++;
+     document.getElementById("target").innerHTML=`value now ${client_count}`
+     }
+
+
+  
